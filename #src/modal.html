@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/modal.min.css">
+	<title>Modal</title>
+</head>
+<body class="_no_shake">
+	<button class="btn" data-modal="1">Открыть модальное окно</button>
+	<div class="code">
+		<img src="img/code.png" alt="code" data-modal="2">
+	</div>
+	<div class="modal" id="modal_1">
+		<div class="modal__wrapper">
+			<div class="modal__window">
+				<header class="modal__header">
+					<div class="modal__close _m_close"></div>
+				</header>
+				<main class="modal__content">
+					<h2>Title Content</h2>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum cum velit, unde deleniti, minus accusamus inventore harum, nam nisi magni illum sed quas voluptas ut quo officia ipsam quaerat sint est doloremque, reprehenderit repellat totam esse. Vel ipsam voluptate quibusdam odio veritatis quos. Necessitatibus, neque perferendis nostrum porro, dicta vero?</p>
+				</main>
+				<footer class="modal__footer">
+					<button class="_m_close">Окей</button>
+				</footer>
+			</div>
+		</div>
+	</div>
+	<div class="modal" id="modal_2">
+		<div class="modal__wrapper">
+			<div class="modal__window">
+				<header class="modal__header">
+					<div class="modal__close _m_close"></div>
+				</header>
+				<main class="modal__content">
+					<div class="tab">
+						<div class="tab__filter">
+							<div class="tab__filter__item _active">HTML</div>
+							<div class="tab__filter__item">SCSS</div>
+							<div class="tab__filter__item">JAVASCRIPT</div>
+						</div>
+						<div class="tab__content">
+							<div class="tab__content__item _active">
+								<p>
+									&lt;button class="btn" data-modal="1"&gt;Открыть модальное окно&lt;/button&gt;
+									&lt;div class="modal" id="modal_1"&gt;
+									&lt;div class="modal__wrapper"&gt;
+									&lt;div class="modal__window"&gt;
+									&lt;header class="modal__header"&gt;
+									&lt;div class="modal__close _m_close"&gt;&lt;/div&gt;
+									&lt;/header&gt;
+									&lt;main class="modal__content"&gt;
+									&lt;h2&gt;Title Content&lt;/h2&gt;
+									&lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum cum velit, unde deleniti, minus accusamus inventore harum, nam nisi magni illum sed quas voluptas ut quo officia ipsam quaerat sint est doloremque, reprehenderit repellat totam esse. Vel ipsam voluptate quibusdam odio veritatis quos. Necessitatibus, neque perferendis nostrum porro, dicta vero?&lt;/p&gt;
+									&lt;/main&gt;
+									&lt;footer class="modal__footer"&gt;
+									&lt;button class="_m_close"&gt;Окей&lt;/button&gt;
+									&lt;/footer&gt;
+									&lt;/div&gt;
+									&lt;/div&gt;
+									&lt;/div&gt;
+								</p>
+							</div>
+							<div class="tab__content__item">
+								<p>
+									<a href="other/modal.scss" target="_blunk">Просмотреть scss</a>
+								</p>
+							</div>
+							<div class="tab__content__item">
+								<p>
+									<a href="other/modal.js" target="_blunk">Просмотреть JS</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</main>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="js/modal.min.js"></script>
+</html>

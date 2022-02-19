@@ -1,0 +1,73 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+
+	@font-face {
+	font-family: $font_name;
+	font-display: swap;
+	src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2");
+	font-weight: #{$weight};
+	font-style: #{$style};
+	}
+}
+@import "_fonts.scss";
+html {
+	font-size: 10px;
+}
+@keyframes background {
+	0% {
+		transform: rotate(0deg) scale(1);
+	}
+	20%{
+		transform: rotate(0deg) scale(1.1);
+	}
+	35% {
+		transform: rotate(5deg) scale(1.15);
+	}
+	45% {
+		transform: rotate(-5deg) scale(1.2);
+	}
+	100% {
+		transform: rotate(0deg) scale(1);
+	}
+}
+body {
+	color: #fff;
+	font-size: 1.5rem;
+	background: #0d0d0d;
+	font-family: Lack;
+	font-weight: 400;
+	padding: 10vh 15px;
+	position: relative;
+	&:after {
+	 	background: url("../img/background_body.jpg") no-repeat center center / cover;
+	    content: ' ';
+	    height: 100%;
+	    left: 0;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    will-change: transform;
+	    z-index: -1;
+	    animation: background 30s ease-in-out infinite alternate;
+	}
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+h1 {
+	&.title {
+		font-family: LackLine, sans-serif;
+		font-size: 6rem;
+		font-weight: 400;
+		color: rgba(255,255,255,.6);
+	}
+}
+h2 {
+	&.title {
+		font-family: Lack, sans-serif;
+		font-size: 3.5rem;
+		font-weight: 400;
+	}
+}
+@import "main";

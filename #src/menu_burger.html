@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/menu_burger.min.css">
+	<title>Menu Burger</title>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container header__wrapper">
+				<div class="burger__container">
+					<button class="burger _mobile_show _burger_open_show">
+					</button>
+				</div>
+				<a href="#" class="header__logo h_search_hide _burger_open_show" data-da=".header__list_mobile_title,768,last">WebSkill</a>
+				<div class="header__list__container">
+					<div class="burger__mobile_icons">
+						
+					</div>
+					<ul class="header__list">
+						<h2 class="header__list_mobile_title">
+							<div class="header__list_mobile_title__decor">
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						</h2>
+						<li class="h_search_hide">
+							<a href="#">Home</a>
+						</li>
+						<li class="h_search_hide">
+							<a href="#">About</a>
+						</li>
+						<li class="h_search_hide">
+							<a href="#">Contacts</a>
+						</li>
+						<li class="h_search_hide">
+							<a href="#">Support</a>
+						</li>
+						<li class="h_search_hide">
+							<a href="#">FAQ</a>
+						</li>
+					</ul>
+				</div>
+				<div class="header__icons _burger_open_show">
+					<div class="header__icon h_search_hide" data-da=".burger__mobile_icons,768,last">
+						<svg class="h_def_svg">
+							<use href="img/stack/icons/icons.svg#header_1"></use>
+						</svg>
+					</div>
+					<div class="header__icon header__icon_search h_search_hide _burger_open_hide">
+						<svg class="h_def_svg">
+							<use href="img/stack/icons/icons.svg#header_2"></use>
+						</svg>
+					</div>
+				</div>
+				<div class="header__search">
+					<div class="header__search__input">
+						<div class="header__search__input__icon">
+							<svg class="h_def_svg">
+								<use href="img/stack/icons/icons.svg#header_2"></use>
+							</svg>
+						</div>
+						<input type="text" placeholder="Search on website " class="header__search__input__el">
+						<div class="icon_close _input_close"></div>
+					</div>
+					<div class="header__search__list">
+						<h2 class="header__search__list__subtitle">QUICK LINKS</h2>
+						<div class="header__search__list__item"><a href="#">My Website</a></div>
+						<div class="header__search__list__item"><a href="#">Order A Landing Page</a></div>
+						<div class="header__search__list__item"><a href="#">Web-design</a></div>
+						<div class="header__search__list__item"><a href="#">About Me</a></div>
+						<div class="header__search__list__item"><a href="#">Web-layout</a></div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="container">
+				<div class="main__block main__block_v1">
+					<h2>Это адаптивное свойство, когда ширина экрана меньше контейнера</h2>
+					<p>
+						@include adaptiv-value('margin-bottom', 20, 5, 1); <br>
+						@include adaptiv-value('property', max-width, min-width, type (1));
+					</p>
+				</div>
+			</div>
+		</main>
+	</div>
+</body>
+<script src="js/menu_burger.min.js"></script>
+</html>
