@@ -11,7 +11,7 @@ $md_2: 768px;
 // mixin адаптивное свойство
 $maxWidth: 1920;
 $maxWidthContainer: 1180;
-@mixin adaptiv-value($property, $startSize, $minSize, $type) {
+@mixin response($property, $startSize, $minSize, $type) {
 	$addSize: $startSize - $minSize;
 	@if $type==1 {
 		// Если меньше контейнера
@@ -32,6 +32,9 @@ $maxWidthContainer: 1180;
 
 html {
 	font-size: 10px;
+	max-width: 100%;
+	width: 100%;
+	overflow-x: hidden;
 }
 * {
 	box-sizing: border-box;
@@ -43,9 +46,11 @@ body {
 	font-size: 1.6rem;
 	color: $h_text;
 	font-weight: 400;
-	width: 100vw;
-	position: relative;
+	min-height: 200vh;
+	max-width: 100%;
+	width: 100%;
 	overflow-x: hidden;
+	position: relative;
 	background-color: $h_back;
 }
 a {
@@ -64,13 +69,14 @@ li {
 	max-width: $maxWidthContainer + px;
 	padding: 0 15px;
 	margin: 0 auto;
+	box-sizing: content-box;
 	position: relative;
 }
 .main {
 	padding-top: calc($h_height + 20vh);
 }
 .main__block {
-	background: rgba(0,0,0,0.15);
+	background: rgb(36 106 184 / 15%);
 	h2 {
 		font-weight: 500; 
 		color: #333;
@@ -81,16 +87,16 @@ li {
 	}
 }
 .main__block_v1 {
-	@include adaptiv-value('padding', 50, 15, 1);
+	@include response('padding', 50, 15, 1);
 
 	h2 {
-		@include adaptiv-value('margin-bottom', 20, 5, 1);
-		@include adaptiv-value('font-size', 40, 20, 1);
+		@include response('margin-bottom', 20, 5, 1);
+		@include response('font-size', 40, 20, 1);
 	}
 	p {
 		
-		@include adaptiv-value('font-size', 17, 14.5, 1);
-		@include adaptiv-value('line-height', 30, 22, 1);
+		@include response('font-size', 17, 14.5, 1);
+		@include response('line-height', 30, 22, 1);
 	}
 }
 // header
@@ -99,9 +105,22 @@ li {
 	transition-duration: $h_search_duration;
 	transition-timing-function: ease-out;
 }
+@keyframes header_fixed {
+	0% {
+		transform: translateY(-110%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
 .header {
 	height: $h_height;
-	position: relative;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+	transition: .4s;
 	&:after {
 		content: '';
 		position: absolute;
@@ -114,9 +133,10 @@ li {
 	}
 	&._fixed {
 		position: fixed;
-		left: 0;
-		top: 0;
-		width: 100%;
+		animation: header_fixed .4s ease-in-out;
+	}
+	&._hide {
+		transform: translateY(-110%);
 	}
 }
 .header__wrapper {
@@ -127,7 +147,7 @@ li {
 .header__logo {
 	color: $h_contrast;
 	font-weight: 400;
-	@include adaptiv-value('font-size', 16, 13.5, 1);
+	@include response('font-size', 16, 13.5, 1);
 	line-height: 20px;
 	letter-spacing: 2px;
 }
@@ -162,8 +182,8 @@ li {
 	height: 100%;
 }
 .h_def_svg {
-	@include adaptiv-value('width', 19, 15, 1);
-	@include adaptiv-value('height', 19, 15, 1);
+	@include response('width', 20, 17.5, 1);
+	@include response('height', 20, 17.5, 1);
 	fill: $h_text;
 }
 
@@ -199,18 +219,17 @@ li {
 	transform: scaleX(0.9) translateX(-15px);
 }
 .header__search {
+	width: calc(100% - 25px);
 	position: absolute;
 	left: 50%;
 	top: 0;
-	max-width: 700px;
-	width: calc(100% - 14px);
+	max-width: 725px;
 	border-radius: 0;
 	background-color: $h_back_contrast;
 	z-index: 10;
 	visibility: hidden;
 	opacity: 0;
-	transform: scaleX(0.98) translateX(-50%);
-	overflow: hidden;
+	transform: scaleX(0.94) translateX(-50%);
 	transition: all $h_search_duration * 2 ease-out, border-radius $h_search_duration * 5 ease;
 	input {
 		transform: translateX(-60%);
@@ -228,7 +247,7 @@ li {
 		.header__search__input {
 			.icon_close {
 				transform: none;
-				transition-delay: $h_search_duration * 5;
+				transition-delay: $h_search_duration * 4;
 			}
 		}
 	}
@@ -265,6 +284,9 @@ li {
 	height: $h_height;
 	display: flex;
 	position: relative;
+	overflow-x: hidden;
+	width: 100%;
+	margin: 0 auto;
 	&__icon {
 		position: absolute;
 		left: 0;
@@ -294,7 +316,7 @@ li {
 		top: 0;
 		height: 100%;
 		width: 4.5rem;
-		transform: translateX(100%);
+		transform: translateX(110%);
 		transition: transform $h_search_duration * 1 ease;
 		&:after, &:before {
 			top: 2rem;
@@ -523,3 +545,112 @@ li {
 
 
 // header end
+
+// dropdown menu
+.main__block_v2 {
+	margin-top: 5rem;
+	@include response('padding', 30, 15, 1);
+}
+.dropdown_menu {
+	color: $h_back_contrast;
+	display: flex;
+	column-gap: 7rem;
+	row-gap: 2rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	&__item {
+		@include response('font-size', 26, 16, 1);
+		font-weight: 500;
+		display: flex;
+		align-items: center;
+		padding: 1rem 1.5rem 1.6rem;
+		position: relative;
+		button {
+			display: none;
+		}
+		> .dropdown_menu__item__submenu {
+			opacity: 0;
+			visibility: hidden;
+			transform: scaleY(0.8);
+			max-width: 100vw;
+			width: 320px;
+			position: absolute;
+			left: 0;
+			padding: 0 15px;
+			top: 100%;
+			min-height: 150px;
+			padding-top: 1rem;
+			padding-bottom: 2rem;
+			background-color: #fff;
+			box-shadow: 0 0 0 4px rgba(0,0,0,0.2);
+			@include response('font-size', 22, 15, 1);
+			transition: .3s;
+		}
+		.dropdown_menu__item__submenu__item {
+			padding: 6px 10px;
+		}
+		@media (any-hover: none) {
+			.btn_svg_dropdown {
+				background: transparent;
+				border: none;
+				outline: none;
+				display: block;
+				padding-top: 4px;
+				padding-left: 6px;
+				transition: transform .25s ease;
+				.svg_arrow_dropdown {
+					fill: #555;
+					@include response('width', 32, 25, 1);
+					height: auto;
+					@include response('max-height', 32, 25, 1);
+				}
+				&:active {
+					transform: translateY(3px) scale(.97);
+				}
+			}
+		}
+		@media (any-hover: hover) {
+			transition: background-color .25s ease;
+			.dropdown_menu__item__submenu__item:hover {
+				background-color: rgba(0,0,0,0.08);
+			}
+			&:hover {
+				background-color: rgba(0,0,0,0.08);
+				> .dropdown_menu__item__submenu {
+					opacity: 1;
+					visibility: visible;
+					transform: scaleY(1);
+				}
+			}
+		}
+		
+
+	}
+}
+@media (min-width: $md_1) {
+	.dropdown_menu__item__submenu__hideshow {
+		opacity: 0;
+		visibility: hidden;
+		max-width: 100vw;
+		width: 320px;
+		position: absolute;
+		right: -100%;
+		top: 5px;
+		padding: 0 15px;
+		min-height: 150px;
+		padding-top: 1rem;
+		padding-bottom: 2rem;
+		background-color: #222;
+		color: #ddd;
+		transition: .35s;
+	}
+}
+body._desktop {
+		.dropdown_menu__item__submenu__item:hover {
+			.dropdown_menu__item__submenu__hideshow {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+// dropdown menu end

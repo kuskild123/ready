@@ -13,8 +13,8 @@
 	<div class="wrapper">
 		<header class="header">
 			<div class="container header__wrapper">
-				<div class="burger__container">
-					<button class="burger _mobile_show _burger_open_show">
+				<div class="burger__container ">
+					<button class="burger h_search_hide _mobile_show _burger_open_show">
 					</button>
 				</div>
 				<a href="#" class="header__logo h_search_hide _burger_open_show" data-da=".header__list_mobile_title,768,last">WebSkill</a>
@@ -85,9 +85,55 @@
 				<div class="main__block main__block_v1">
 					<h2>Это адаптивное свойство, когда ширина экрана меньше контейнера</h2>
 					<p>
-						@include adaptiv-value('margin-bottom', 20, 5, 1); <br>
-						@include adaptiv-value('property', max-width, min-width, type (1));
+						@include response('margin-bottom', 20, 5, 1); <br>
+						@include response('property', max-width, min-width, type (1)); <br>
+						calc( 100px + (124 - 100) * (100vw - 320px) / (992 - 320) );
 					</p>
+				</div>
+				<div class="main__block main__block_v2">
+					<div class="dropdown_menu">
+						<div class="dropdown_menu__item">
+							<a href="#">Item 1</a>
+							<button class="btn_svg_dropdown"><svg class="svg_arrow_dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg></button>
+							<div class="dropdown_menu__item__submenu">
+								<div class="dropdown_menu__item__submenu__item">
+									<a href="#">Submenu item</a>
+									<button class="btn_svg_dropdown"><svg class="svg_arrow_dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg></button>
+									<div class="dropdown_menu__item__submenu__hideshow">
+										<div class="dropdown_menu__item__submenu__item">
+											<a href="#">Submenu item</a>
+										</div>
+										<div class="dropdown_menu__item__submenu__item">
+											<a href="#">Submenu item</a>
+										</div>
+										<div class="dropdown_menu__item__submenu__item">
+											<a href="#">Submenu item</a>
+										</div>
+										<div class="dropdown_menu__item__submenu__item">
+											<a href="#">Submenu item</a>
+										</div>
+									</div>
+								</div>
+								<div class="dropdown_menu__item__submenu__item">
+									<a href="#">Submenu item</a>
+								</div>
+								<div class="dropdown_menu__item__submenu__item">
+									<a href="#">Submenu item</a>
+								</div>
+								<div class="dropdown_menu__item__submenu__item">
+									<a href="#">Submenu item</a>
+								</div>
+							</div>
+						</div>
+						<div class="dropdown_menu__item">
+							<a href="#">Item 2</a>
+							<button><svg class="svg_arrow_dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg></button>
+						</div>
+						<div class="dropdown_menu__item">
+							<a href="#">Item 3</a>
+							<button><svg class="svg_arrow_dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="transform: ;msFilter:;"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg></button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</main>
