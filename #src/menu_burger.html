@@ -138,6 +138,77 @@
 			</div>
 		</main>
 	</div>
+	<aside class="sidebar">
+		<div class="sidebar__other">
+			<div class="sidebar__close"></div>
+		</div>
+		<ul class="sidebar__items">
+			<!-- весь список -->
+			<li class="sidebar__item">
+				<a href="#">Dashboard</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Table</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Forms</a>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">Settings</a>
+				<button class="sidebar__open">
+					<svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+				</button>
+				<!-- Level 2 -->
+				<ul class="sidebar__submenu sidebar__submenu__v1">
+					<li class="sidebar__item">
+						<a href="#">Dashboard</a>
+						<button class="sidebar__open">
+							<svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+						</button>
+						<ul class="sidebar__submenu sidebar__submenu__v2">
+							<li class="sidebar__item">
+								<a href="#">Table</a>
+							</li>
+							<li class="sidebar__item">
+								<a href="#">Forms</a>
+							</li>
+						</ul>
+					</li>
+					<li class="sidebar__item">
+						<a href="#">Dashboard</a>
+					</li>
+					<li class="sidebar__item">
+						<a href="#">Settings</a>
+					</li>
+					<li class="sidebar__item">
+						<a href="#">Forms</a>
+					</li>
+				</ul>
+			</li>
+			<li class="sidebar__item">
+				<a href="#">About</a>
+				<button class="sidebar__open">
+					<svg class="sidebar__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path></svg>
+				</button>
+				<!-- Level 3 -->
+				<ul class="sidebar__submenu sidebar__submenu__v1">
+					<li class="sidebar__item">
+						<a href="#">Forms</a>
+					</li>
+					<li class="sidebar__item">
+						<a href="#">Lorem</a>
+					</li>
+					<li class="sidebar__item">
+						<a href="#">Table</a>
+					</li>
+					<li class="sidebar__item">
+						<a href="#">Forms</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</aside>
+	<button class="sidebar_btn"></button>
 </body>
 <script src="js/menu_burger.min.js"></script>
 </html>
